@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packet Dash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+
+        <!-- UI Overlays -->
+        <div id="ui-layer">
+            <div class="hud">
+                <div class="score-box">SCORE: <span id="current-score">0</span></div>
+                <div class="score-box">HIGH: <span id="high-score">0</span></div>
+                <div class="controls">
+                    <button id="btn-pause" title="Pause (P)">⏸</button>
+                    <button id="btn-mute" title="Mute (M)">🔊</button>
+                </div>
+            </div>
+
+            <!-- Start Screen -->
+            <div id="start-screen" class="screen">
+                <h1>PACKET DASH</h1>
+                <p>CONNECTION LOST. ESTABLISHING OFFLINE LINK...</p>
+                <div class="instructions">
+                    <p>← → : Switch Lanes</p>
+                    <p>SPACE : Jump</p>
+                    <p>↓ : Slide</p>
+                </div>
+                <div class="difficulty-container">
+                    <label for="difficulty-select">DIFFICULTY:</label>
+                    <select id="difficulty-select">
+                        <option value="easy">EASY</option>
+                        <option value="normal" selected>NORMAL</option>
+                        <option value="hard">HARD</option>
+                    </select>
+                </div>
+                <button id="btn-start" class="action-btn">INITIALIZE</button>
+            </div>
+
+            <!-- Pause Screen -->
+            <div id="pause-screen" class="screen hidden">
+                <h1>PAUSED</h1>
+                <div style="display: flex; gap: 20px;">
+                    <button id="btn-resume" class="action-btn">RESUME</button>
+                    <button id="btn-restart-pause" class="action-btn">RESTART</button>
+                </div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="game-over-screen" class="screen hidden">
+                <h1>LINK SEVERED</h1>
+                <div class="final-scores">
+                    <p>SCORE: <span id="final-score">0</span></p>
+                    <p>BEST: <span id="final-high-score">0</span></p>
+                </div>
+                <button id="btn-restart" class="action-btn">REBOOT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/Constants.js"></script>
+    <script src="js/StorageManager.js"></script>
+    <script src="js/AudioManager.js"></script>
+    <script src="js/InputManager.js"></script>
+    <script src="js/UIManager.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Obstacle.js"></script>
+    <script src="js/ObstacleManager.js"></script>
+    <script src="js/Renderer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
