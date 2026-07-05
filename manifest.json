@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Packet Dash",
+  "version": "1.0",
+  "description": "An endless 3-lane runner game to play when you are offline.",
+  "icons": {
+    "16": "game/logo.png",
+    "48": "game/logo.png",
+    "128": "game/logo.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "game/logo.png",
+      "48": "game/logo.png",
+      "128": "game/logo.png"
+    },
+    "default_title": "Play Packet Dash!"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
